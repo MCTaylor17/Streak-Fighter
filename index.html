@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Streak Fighter</title>
+  <link rel="stylesheet" href="./bundle.css">
+  <style>
+    #stage {
+      margin: 30px auto;
+      display: block;
+      background: gray;
+    }
+    #controller {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="stage" width="400" height="200"></canvas>
+  <div id="controller">
+  
+<!--Traversal-->
+    <div id="left" class="button-direction"></div>
+    <div id="right" class="button-direction"></div>
+<!--Crouch-->
+    <div id="down" class="button-direction"></div>
+    <div id="downLeft" class="button-direction diagonal"></div>
+    <div id="downRight" class="button-direction diagonal"></div>
+<!--Jump-->
+    <div id="up" class="button-direction"></div>
+    <div id="upLeft" class="button-direction diagonal"></div>
+    <div id="upRight" class="button-direction diagonal"></div>
+<!--Attacks-->
+    <div id="lightPunch" class="button-attack"></div>
+    <div id="mediumPunch" class="button-attack"></div>
+    <div id="hardPunch" class="button-attack shoulder"></div>
+    <div id="lightKick" class="button-attack"></div>
+    <div id="mediumKick" class="button-attack"></div>
+    <div id="hardKick" class="button-attack shoulder"></div>
+  </div>
+  <script src="./bundle.js"></script>
+</body>
+</html>

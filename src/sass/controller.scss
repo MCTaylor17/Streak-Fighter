@@ -1,0 +1,128 @@
+$imageHeight: 268px;
+$imageWidth: 609px;
+$imageRatio: $imageHeight/$imageWidth;
+$displayWidth: 90%;
+$displayHeight: $displayWidth * $imageRatio;
+@debug($displayHeight);
+
+* {
+  box-sizing: border-box;
+}
+
+%toggle-active {
+  opacity: 0.2;
+  &.active {
+    opacity: 1;
+  }
+}
+
+#controller {
+  position: relative;
+  height: 0px;
+  width: $displayWidth;
+  padding-bottom: $displayHeight;
+  background-image: url("./SNES-Controller.jpg");
+  background-size: cover;
+
+  .button-direction {
+    @extend %toggle-active;
+    $buttonHeight: 10%;
+    height: $buttonHeight;
+    width: $buttonHeight * $imageRatio;
+    background: magenta;
+    position: absolute;
+    border-radius: 25%;
+    border: 1px solid black;
+    
+    &.diagonal {
+      background: cyan;
+    }
+  }
+  
+  
+  $leftX: 14%;
+  $rightX: 24.5%;
+  $upY: 34%;
+  $downY: 58%;
+  $traverseY: 46%;
+  $verticalX: 19.25%;
+
+  #up {
+    left: $verticalX;
+    top: $upY;
+    background: lime;
+  }
+  #upLeft {
+    left: $leftX;
+    top: $upY;
+  }
+  #upRight {
+    left: $rightX;
+    top: $upY;
+  }
+  #downLeft {
+    left: $leftX; 
+    top: $downY;
+  }
+  #downRight {
+    left: $rightX; 
+    top: $downY;
+  }
+  #down {
+    left: $verticalX;
+    top: $downY;
+    background: lime;
+  }
+  #left {
+    left: $leftX;
+    top: $traverseY;
+  }
+  #right {
+    left: $rightX;
+    top: $traverseY;
+  }
+
+
+  .button-attack {
+    @extend %toggle-active;
+    $buttonHeight: 15%;
+    height: $buttonHeight;
+    width: $buttonHeight * $imageRatio;
+    background: red;
+    position: absolute;
+    border-radius: 100%;
+  }
+  #lightPunch {
+    left: 66%;
+    top: 43.5%;
+  }
+  #mediumPunch {
+    left: 75.75%;
+    top: 27.25%;
+
+  }
+  #lightKick {
+    left: 75.75%;
+    top: 60.5%;
+  }
+  #mediumKick {
+    left: 85.25%;
+    top: 43.5%;
+  }
+
+  .shoulder {
+    border-radius: initial;
+    background: red;
+    width: 18%;
+    height: 4%;
+    top: 1%;
+  }
+  #hardPunch {
+    left: 15%;
+  }
+  #hardKick {
+    left: 68%;
+
+  }
+
+}
