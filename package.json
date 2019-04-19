@@ -16,7 +16,8 @@
     "rollup-plugin-sass": "^1.2.2"
   },
   "scripts": {
-    "watch": "rollup -c -w"
+    "watch": "rollup -c -w",
+    "build": "rollup -c"
   },
   "author": "",
   "license": "ISC"
