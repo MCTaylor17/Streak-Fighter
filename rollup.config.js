@@ -2,6 +2,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import sass from 'rollup-plugin-sass';
+import browsersync from 'rollup-plugin-browsersync';
 
 export default {
   input: './src/main.js',
@@ -21,6 +22,7 @@ export default {
           return { file: path.replace(/^~/, 'node_modules/') };
         }
       }
-    })
+    }),
+    browsersync({server: '.'})
   ]
 };
