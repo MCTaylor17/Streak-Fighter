@@ -17,7 +17,7 @@
     "rollup-plugin-sass": "^1.2.2"
   },
   "scripts": {
-    "watch": "rollup -c -w",
+    "watch": "rollup -c -w --environment BUILD:development",
     "build": "rollup -c"
   },
   "author": "",

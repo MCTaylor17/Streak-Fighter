@@ -23,6 +23,6 @@ export default {
         }
       }
     }),
-    browsersync({server: '.'})
+    (process.env.BUILD === "development" && browsersync({server: '.'}))
   ]
 };
