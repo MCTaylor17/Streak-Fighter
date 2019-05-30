@@ -1,10 +1,3 @@
-import sprite$ from "./sprite$";
-
-sprite$.subscribe(E => {
-  console.log(E);
-});
-
-
 import W from "./world";
 const D = W.dimensions;
 

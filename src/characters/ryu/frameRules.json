@@ -1,61 +1,864 @@
 export default {
-  seeAlso: "http://wiki.shoryuken.com/Ryu_(ST)",
-  idle: [
-    [6, 18, 48, 98, 2],
-    [55, 17, 96, 98, 2],
-    [105, 18, 147, 98, 2],
-    [154, 19, 196, 98, 2]
-  ],
-  crouch: [
-    [1114, 25, 1155, 99, 1],
-    [1161, 44, 1202, 99, -1]
-  ],
-  punch: {
-    close: {
-      light: [
-        [464, 134, 506, 214, 2],
-        [512, 127, 559, 214, 2],
-        [565, 134, 608, 214, 2]
-      ],
-      medium: [
-        [616, 134, 658, 214, 2],
-        [666, 130, 714, 214, 2],
-        [719, 130, 779, 214, 2],
-        [785, 131, 832, 214, 2],
-        [839, 130, 899, 214, 2],
-        [906, 130, 954, 214, 2],
-        [961, 134, 1003, 214, 2]
-      ],
-      hard: [
-        [1012, 130, 1052, 214, 2],
-        [1060, 129, 1119, 214, 2],
-        [1125, 112, 1181, 214, 2],
-        [1187, 129, 1246, 214, 2],
-        [1253, 134, 1295, 214, 2]
-      ]
+  "idle": {
+    "standing": null,
+    "crouching": null,
+    "blocking": null,
+    "stunned": null
+  },
+  "hit": {
+    "normal": null,
+    "face": null,
+    "crouch": null,
+    "recover": null,
+    "knockout": null
+  },
+  "misc": {
+    "projectile": null,
+    "victory": null,
+    "timeout": null
+  },
+  "jab": {
+    "standing": {
+      "close": {
+        "maxRange": "25",
+        "name": "Close Standing Jab",
+        "damage": "4[0]",
+        "stun": "0~5",
+        "stunTimer": "40",
+        "specialCancel": true,
+        "chainCancel": false,
+        "frameAdvantage": "+4",
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 4,
+          "phase": 1
+        }, {
+          "frames": 5,
+          "phase": 2
+        }]
+      },
+      "far": {
+        "name": "Far Standing Jab",
+        "damage": "4[0]",
+        "stun": "0~5",
+        "stunTimer": "40",
+        "specialCancel": true,
+        "chainCancel": true,
+        "frameAdvantage": "+4",
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 4,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 1,
+          "phase": 2
+        }]
+      }
     },
-    far: {
-      light: [
-        [3, 134, 45, 214, 2],
-        [53, 134, 109, 214, 4],
-        [117, 134, 159, 214, 4],
-        [6, 18, 48, 98, 1]
-      ],
-      medium: [
-        [170, 134, 212, 214, 1],
-        [218, 130, 268, 214, 2],
-        [274, 130, 346, 214, 4],
-        [353, 130, 403, 214, 3],
-        [411, 134, 453, 214, 3],
-        [6, 18, 48, 98, 1]
-      ],
-      hard: [
-        [170, 134, 212, 214, 3],
-        [218, 130, 268, 214, 2],
-        [274, 130, 346, 214, 6],
-        [353, 130, 403, 214, 10],
-        [411, 134, 453, 214, 13],
-      ]
+    "crouching": {
+      "name": "Crouching Jab",
+      "damage": "4[0]",
+      "stun": "0~5",
+      "stunTimer": "40",
+      "specialCancel": true,
+      "chainCancel": true,
+      "frameAdvantage": "+4",
+      "animations": [{
+        "frames": 2,
+        "phase": 0
+      }, {
+        "frames": 4,
+        "phase": 1
+      }, {
+        "frames": 4,
+        "phase": 2
+      }, {
+        "frames": 1,
+        "phase": 2
+      }]
+    },
+    "jumping": {
+      "neutral": {
+        "name": "Neutral Jumping Jab",
+        "damage": "12[0]",
+        "stun": "1~7(-2)",
+        "stunTimer": "40",
+        "specialCancel": true
+      },
+      "diagonal": {
+        "name": "Diagonal Jumping Jab",
+        "damage": "12[0]",
+        "stun": "1~7(-2)",
+        "stunTimer": "40",
+        "specialCancel": true
+      }
     }
-  ]
+  },
+  "Strong": {
+    "standing": {
+      "close": {
+        "maxRange": "31",
+        "name": "Close Standing Strong",
+        "damage": "22[0]",
+        "stun": "5~11",
+        "stunTimer": "60",
+        "specialCancel": true,
+        "chainCancel": false,
+        "frameAdvantage": "-1",
+        "animations": [{
+          "frames": 1,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 1
+        }, {
+          "frames": 6,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }]
+      },
+      "far": {
+        "name": "Far Standing Strong",
+        "damage": "22[0]",
+        "stun": "5~11",
+        "stunTimer": "60",
+        "specialCancel": true,
+        "chainCancel": false,
+        "frameAdvantage": "+7",
+        "animations": [{
+          "frames": 1,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 4,
+          "phase": 1
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 1,
+          "phase": 2
+        }]
+      }
+    },
+    "crouching": {
+      "name": "Crouching Strong",
+      "damage": "22[0]",
+      "stun": "5~11",
+      "stunTimer": "60",
+      "specialCancel": true,
+      "chainCancel": false,
+      "frameAdvantage": "+7",
+      "animations": [{
+        "frames": 1,
+        "phase": 0
+      }, {
+        "frames": 2,
+        "phase": 0
+      }, {
+        "frames": 4,
+        "phase": 1
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 1,
+        "phase": 2
+      }]
+    },
+    "jumping": {
+      "neutral": {
+        "name": "Neutral/Diagonal Jumping Strong",
+        "damage": "22[0]",
+        "stun": "5~11",
+        "stunTimer": "50",
+        "specialCancel": true,
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 20,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": -1,
+          "phase": 2
+        }]
+      },
+      "diagonal": {
+        "name": "Neutral/Diagonal Jumping Strong",
+        "damage": "22[0]",
+        "stun": "5~11",
+        "stunTimer": "50",
+        "specialCancel": true,
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 20,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": -1,
+          "phase": 2
+        }]
+      }
+    }
+  },
+  "Fierce": {
+    "standing": {
+      "close": {
+        "maxRange": "41",
+        "name": "Close Standing Fierce",
+        "damage": "28[1]",
+        "stun": "3~9 / 10~16",
+        "stunTimer": "40 / 80",
+        "specialCancel": true,
+        "chainCancel": false,
+        "frameAdvantage": "-9 / -7",
+        "animations": [{
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 1
+        }, {
+          "frames": 6,
+          "phase": 1
+        }, {
+          "frames": 10,
+          "phase": 2
+        }, {
+          "frames": 13,
+          "phase": 2
+        }]
+      },
+      "far": {
+        "name": "Far Standing Fierce",
+        "damage": "28[1]",
+        "stun": "10~16",
+        "stunTimer": "80",
+        "specialCancel": false,
+        "chainCancel": false,
+        "frameAdvantage": "-7",
+        "animations": [{
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 6,
+          "phase": 1
+        }, {
+          "frames": 10,
+          "phase": 2
+        }, {
+          "frames": 12,
+          "phase": 2
+        }, {
+          "frames": 1,
+          "phase": 2
+        }]
+      }
+    },
+    "crouching": {
+      "name": "Crouching Fierce",
+      "damage": "28[1] / 22[1]",
+      "stun": "3~9 / 10~16",
+      "stunTimer": "40 / 80",
+      "specialCancel": true,
+      "chainCancel": false,
+      "frameAdvantage": "-12 / -9",
+      "animations": [{
+        "frames": 3,
+        "phase": 0
+      }, {
+        "frames": 3,
+        "phase": 1
+      }, {
+        "frames": 8,
+        "phase": 1
+      }, {
+        "frames": 10,
+        "phase": 2
+      }, {
+        "frames": 12,
+        "phase": 2
+      }, {
+        "frames": 1,
+        "phase": 2
+      }]
+    },
+    "jumping": {
+      "neutral": {
+        "name": "Neutral Jumping Fierce",
+        "damage": "28[0]",
+        "stun": "11~17(-1)",
+        "stunTimer": "60(+20)",
+        "specialCancel": true,
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 8,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": -1,
+          "phase": 2
+        }]
+      },
+      "diagonal": {
+        "name": "Diagonal Jumping Fierce",
+        "damage": "28[1]",
+        "stun": "3~9",
+        "stunTimer": "40",
+        "specialCancel": true,
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 8,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": -1,
+          "phase": 2
+        }]
+      }
+    }
+  },
+  "Short": {
+    "standing": {
+      "close": {
+        "maxRange": "0",
+        "name": "Close Standing Short",
+        "damage": "12[0]",
+        "stun": "0~5",
+        "stunTimer": "40",
+        "specialCancel": false,
+        "chainCancel": true,
+        "frameAdvantage": "+3",
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": 2,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 1,
+          "phase": 2
+        }]
+      },
+      "far": {
+        "name": "Far Standing Short",
+        "damage": "14[0]",
+        "stun": "0~5",
+        "stunTimer": "40",
+        "specialCancel": false,
+        "chainCancel": true,
+        "frameAdvantage": "+0",
+        "animations": [{
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": 8,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 1,
+          "phase": 2
+        }]
+      }
+    },
+    "crouching": {
+      "name": "Crouching Short",
+      "damage": "4[0]",
+      "stun": "0~5",
+      "stunTimer": "40",
+      "specialCancel": true,
+      "chainCancel": true,
+      "frameAdvantage": "+4",
+      "animations": [{
+        "frames": 2,
+        "phase": 0
+      }, {
+        "frames": 4,
+        "phase": 1
+      }, {
+        "frames": 4,
+        "phase": 2
+      }, {
+        "frames": 1,
+        "phase": 2
+      }]
+    },
+    "jumping": {
+      "neutral": {
+        "name": "Neutral Jumping Short",
+        "damage": "14[0]",
+        "stun": "1~7(-2)",
+        "stunTimer": "40",
+        "specialCancel": true
+      },
+      "diagonal": {
+        "name": "Diagonal Jumping Short",
+        "damage": "12[0]",
+        "stun": "1~7(-2)",
+        "stunTimer": "40",
+        "specialCancel": false,
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": -1,
+          "phase": 1
+        }]
+      }
+    }
+  },
+  "Forward": {
+    "standing": {
+      "close": {
+        "maxRange": "0",
+        "name": "Close Standing Forward",
+        "damage": "24[0]",
+        "stun": "5~11",
+        "stunTimer": "60",
+        "specialCancel": true,
+        "chainCancel": false,
+        "frameAdvantage": "+3",
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 1,
+          "phase": 0
+        }, {
+          "frames": 6,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 1,
+          "phase": 2
+        }]
+      },
+      "far": {
+        "name": "Far Standing Forward",
+        "damage": "24[0]",
+        "stun": "5~11",
+        "stunTimer": "60",
+        "specialCancel": false,
+        "chainCancel": false,
+        "frameAdvantage": "-1",
+        "animations": [{
+          "frames": 5,
+          "phase": 0
+        }, {
+          "frames": 6,
+          "phase": 0
+        }, {
+          "frames": 12,
+          "phase": 1
+        }, {
+          "frames": 6,
+          "phase": 2
+        }, {
+          "frames": 1,
+          "phase": 2
+        }]
+      }
+    },
+    "crouching": {
+      "name": "Crouching Forward",
+      "damage": "22[0]",
+      "stun": "5~11",
+      "stunTimer": "60",
+      "specialCancel": true,
+      "chainCancel": false,
+      "frameAdvantage": "+3",
+      "animations": [{
+        "frames": 1,
+        "phase": 0
+      }, {
+        "frames": 2,
+        "phase": 0
+      }, {
+        "frames": 6,
+        "phase": 1
+      }, {
+        "frames": 4,
+        "phase": 2
+      }, {
+        "frames": 4,
+        "phase": 2
+      }, {
+        "frames": 1,
+        "phase": 2
+      }]
+    },
+    "jumping": {
+      "neutral": {
+        "name": "Neutral Jumping Forward",
+        "damage": "22[0]",
+        "stun": "5~11",
+        "stunTimer": "50",
+        "specialCancel": false,
+        "animations": [{
+          "frames": 5,
+          "phase": 0
+        }, {
+          "frames": 13,
+          "phase": 1
+        }, {
+          "frames": 6,
+          "phase": 2
+        }, {
+          "frames": 6,
+          "phase": 2
+        }, {
+          "frames": -1,
+          "phase": 2
+        }]
+      },
+      "diagonal": {
+        "name": "Diagonal Jumping Forward",
+        "damage": "22[0]",
+        "stun": "5~11",
+        "stunTimer": "50(+10)",
+        "specialCancel": false,
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": 13,
+          "phase": 1
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": -1,
+          "phase": 2
+        }]
+      }
+    }
+  },
+  "Roundhouse": {
+    "standing": {
+      "close": {
+        "maxRange": "40",
+        "name": "Close Standing Roundhouse",
+        "damage": "30[1] + 4[1]",
+        "stun": "10~16 + 1~7",
+        "stunTimer": "80 + 70",
+        "specialCancel": false,
+        "chainCancel": false,
+        "frameAdvantage": "-1 / +7(+6)",
+        "animations": [{
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": 4,
+          "phase": 0
+        }, {
+          "frames": 8,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 10,
+          "phase": 3
+        }, {
+          "frames": 1,
+          "phase": 3
+        }]
+      },
+      "far": {
+        "name": "Far Standing Roundhouse",
+        "damage": "30[1]",
+        "stun": "10~16",
+        "stunTimer": "80",
+        "specialCancel": true,
+        "chainCancel": false,
+        "frameAdvantage": "-7 / -3",
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 4,
+          "phase": 1
+        }, {
+          "frames": 8,
+          "phase": 1
+        }, {
+          "frames": 10,
+          "phase": 2
+        }, {
+          "frames": 7,
+          "phase": 2
+        }]
+      }
+    },
+    "crouching": {
+      "name": "Crouching Roundhouse",
+      "damage": "30[1]",
+      "stun": "5~11",
+      "stunTimer": "130",
+      "specialCancel": true,
+      "chainCancel": false,
+      "frameAdvantage": "-9",
+      "animations": [{
+        "frames": 3,
+        "phase": 0
+      }, {
+        "frames": 6,
+        "phase": 1
+      }, {
+        "frames": 6,
+        "phase": 2
+      }, {
+        "frames": 8,
+        "phase": 2
+      }, {
+        "frames": 11,
+        "phase": 2
+      }]
+    },
+    "jumping": {
+      "neutral": {
+        "name": "Neutral Jumping Roundhouse",
+        "damage": "30[0]",
+        "stun": "11~17(-1)",
+        "stunTimer": "60(+20)",
+        "specialCancel": true,
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 4,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 1
+        }, {
+          "frames": 4,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": -1,
+          "phase": 2
+        }]
+      },
+      "diagonal": {
+        "name": "Diagonal Jumping Roundhouse",
+        "damage": "30[1]",
+        "stun": "3~9",
+        "stunTimer": "40",
+        "specialCancel": false,
+        "animations": [{
+          "frames": 2,
+          "phase": 0
+        }, {
+          "frames": 3,
+          "phase": 0
+        }, {
+          "frames": 7,
+          "phase": 1
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": 3,
+          "phase": 2
+        }, {
+          "frames": -1,
+          "phase": 2
+        }]
+      }
+    }
+  },
+  "jumps": {
+    "neutral": {
+      "name": "Back Jump",
+      "animations": [{
+        "frames": 2,
+        "phase": 0
+      }, {
+        "frames": 1,
+        "phase": 1
+      }, {
+        "frames": 15,
+        "phase": 2
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 18,
+        "phase": 2
+      }, {
+        "frames": 1,
+        "phase": 3
+      }, {
+        "frames": 7,
+        "phase": 4
+      }]
+    },
+    "forward": {
+      "name": "Forward Jump",
+      "animations": [{
+        "frames": 2,
+        "phase": 0
+      }, {
+        "frames": 1,
+        "phase": 1
+      }, {
+        "frames": 13,
+        "phase": 2
+      }, {
+        "frames": 5,
+        "phase": 2
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 3,
+        "phase": 2
+      }, {
+        "frames": 5,
+        "phase": 2
+      }, {
+        "frames": 11,
+        "phase": 2
+      }, {
+        "frames": 1,
+        "phase": 3
+      }, {
+        "frames": 7,
+        "phase": 4
+      }]
+    }
+  }
 }

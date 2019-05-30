@@ -1,0 +1,137 @@
+export default {
+  idle: {
+    standing: [
+      [6, 18, 48, 98],
+      [55, 17, 96, 98],
+      [105, 18, 147, 98],
+      [154, 19, 196, 98]
+    ],
+    crouching: [
+      [1114, 25, 1155, 99],
+      [1161, 44, 1202, 99]
+    ],
+    blocking: null,
+    stunned: null
+  },
+  misc: {
+    projectile: null,
+    victory1: null,
+    victory2: null,
+    timeout: null
+  },
+  hit: {
+    normal: null,
+    face: null,
+    crouch: null,
+    recover: null,
+    knockout: null
+  },
+  jab: {
+    standing: {
+      close: [
+        [464, 134, 506, 214],
+        [512, 127, 559, 214],
+        [565, 134, 608, 214]
+      ],
+      far: [
+        [3, 134, 45, 214],
+        [53, 134, 109, 214],
+        [117, 134, 159, 214],
+        [6, 18, 48, 98]
+      ]
+    },
+    crouching: [],
+    jumping: {
+      neutral: [],
+      diagonal: []
+    }
+  },
+  strong: {
+    standing: {
+      close: [
+        [616, 134, 658, 214],
+        [666, 130, 714, 214],
+        [719, 130, 779, 214],
+        [785, 131, 832, 214],
+        [839, 130, 899, 214],
+        [906, 130, 954, 214],
+        [961, 134, 1003, 214]
+      ],
+      far: [
+        [170, 134, 212, 214],
+        [218, 130, 268, 214],
+        [274, 130, 346, 214],
+        [353, 130, 403, 214],
+        [411, 134, 453, 214],
+        [6, 18, 48, 98]
+      ]
+    },
+    crouching: [],
+    jumping: {
+      neutral: [],
+      diagonal: []
+    }
+  },
+  fierce: {
+    standing: {
+      close: [
+        [1012, 130, 1052, 214],
+        [1060, 129, 1119, 214],
+        [1125, 112, 1181, 214],
+        [1187, 129, 1246, 214],
+        [1253, 134, 1295, 214]
+      ],
+      far: [
+        [170, 134, 212, 214],
+        [218, 130, 268, 214],
+        [274, 130, 346, 214],
+        [353, 130, 403, 214],
+        [411, 134, 453, 214],
+      ]
+    },
+    crouching: [],
+    jumping: {
+      neutral: [],
+      diagonal: []
+    }
+  },
+  short: {
+    standing: {
+      close: [
+      ],
+      far: [
+      ]
+    },
+    crouching: [],
+    jumping: {
+      neutral: [],
+      diagonal: []
+    }
+  },
+  forward: {
+    standing: {
+      close: [
+      ],
+      far: [
+      ]
+    },
+    crouching: [],
+    jumping: {
+      neutral: [],
+      diagonal: []
+    }
+  },
+  roundhouse: {
+    standing: {
+      close: [
+      ],
+      far: [
+      ]
+    },
+    crouching: [],
+    jumping: {
+      neutral: [],
+      diagonal: []
+    }
+  },
+}
